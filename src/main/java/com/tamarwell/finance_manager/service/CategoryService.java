@@ -1,0 +1,18 @@
+package com.tamarwell.finance_manager.service;
+
+import com.tamarwell.finance_manager.entity.Category;
+import com.tamarwell.finance_manager.repository.CategoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+public class CategoryService {
+    @Autowired
+    private CategoryRepository repository;
+
+    public Optional<Category> findCategoryByName(String categoryName){
+        return repository.findCategoryByName(categoryName);
+    }
+}
